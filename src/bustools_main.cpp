@@ -1559,27 +1559,26 @@ void Bustools_Usage() {
   std::cout << "bustools " << BUSTOOLS_VERSION << std::endl << std::endl  
   << "Usage: bustools <CMD> [arguments] .." << std::endl << std::endl
   << "Where <CMD> can be one of: " << std::endl << std::endl
-  << "sort            Sort a BUS file by barcodes and UMIs" << std::endl
+  << "capture         Capture records from a BUS file" << std::endl
   << "correct         Error correct a BUS file" << std::endl
-  << "umicorrect      Error correct the UMIs in a BUS file" << std::endl
   << "count           Generate count matrices from a BUS file" << std::endl
   << "inspect         Produce a report summarizing a BUS file" << std::endl
-  << "whitelist       Generate a whitelist from a BUS file" << std::endl
+  << "linker          Remove section of barcodes in BUS files" << std::endl
   << "project         Project a BUS file to gene sets" << std::endl
-  << "capture         Capture records from a BUS file" << std::endl
-  << "merge           Merge bus files from same experiment" << std::endl
+  << "sort            Sort a BUS file by barcodes and UMIs" << std::endl
   << "text            Convert a binary BUS file to a tab-delimited text file" << std::endl
+  << "fromtext        Convert a tab-delimited text file to a binary BUS file" << std::endl
+  << "whitelist       Generate a whitelist from a BUS file" << std::endl     
+  << "umicorrect      Error correct the UMIs in a BUS file" << std::endl
+  << "merge           Merge bus files from same experiment" << std::endl
   << "extract         Extract FASTQ reads correspnding to reads in BUS file" << std::endl
   << "predict         Correct the count matrix using prediction of unseen species" << std::endl
-  << "linker          Remove section of barcodes in BUS files" << std::endl
   << "version         Prints version number" << std::endl 
   << "cite            Prints citation information" << std::endl
   << std::endl
   << "Running bustools <CMD> without arguments prints usage information for <CMD>"
   << std::endl << std::endl;
 }
-
-
 
 void Bustools_sort_Usage() {
   std::cout << "Usage: bustools sort [options] bus-files" << std::endl << std::endl

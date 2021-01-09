@@ -54,7 +54,7 @@ To see a list of available commands, type `bustools` in the terminal
 > bustools 
 Usage: bustools <CMD> [arguments] ..
 
-Where <CMD> can be one of: 
+Where <CMD> can be one of:
 
 capture         Capture records from a BUS file
 correct         Error correct a BUS file
@@ -64,10 +64,18 @@ linker          Remove section of barcodes in BUS files
 project         Project a BUS file to gene sets
 sort            Sort a BUS file by barcodes and UMIs
 text            Convert a binary BUS file to a tab-delimited text file
+fromtext        Convert a tab-delimited text file to a binary BUS file
 whitelist       Generate a whitelist from a BUS file
+umicorrect      Error correct the UMIs in a BUS file
+merge           Merge bus files from same experiment
+extract         Extract FASTQ reads correspnding to reads in BUS file
+predict         Correct the count matrix using prediction of unseen species
+version         Prints version number
+cite            Prints citation information
 
 Running bustools <CMD> without arguments prints usage information for <CMD>
 ~~~
+
 
 ### capture
 `bustools capture` can separate BUS files into multiple files according to the capture criteria.
