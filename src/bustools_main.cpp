@@ -98,6 +98,7 @@ void parse_ProgramOptions_sort(int argc, char **argv, Bustools_opt& opt) {
     {"umi",             no_argument,        0, 'u'},
     {"count",           no_argument,        0, 'c'},
     {"flags",           no_argument,        0, 'F'},
+    {"ec",              no_argument,        0, 'E'},
     {"pipe",            no_argument,        0, 'p'},
     {0,                 0,                  0,  0 }
   };
@@ -152,6 +153,9 @@ void parse_ProgramOptions_sort(int argc, char **argv, Bustools_opt& opt) {
       break;
     case 'F':
       opt.type = SORT_F;
+      break;
+    case 'E':
+      opt.type = SORT_EC;
       break;
     case 'p':
       opt.stream_out = true;
@@ -1590,6 +1594,7 @@ void Bustools_sort_Usage() {
   << "    --umi             Sort by UMI, barcode, then ec" << std::endl
   << "    --count           Sort by multiplicity, barcode, UMI, then ec" << std::endl
   << "    --flags           Sort by flag, barcode, UMI, then ec" << std::endl
+  << "    --ec              Sort by ec, barcode, then UMI" << std::endl
   << std::endl;
 }
 

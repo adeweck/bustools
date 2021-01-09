@@ -192,12 +192,17 @@ Raw BUS output from pseudoalignment programs may be unsorted. To simply and acce
 Usage: bustools sort [options] bus-files
 
 Options: 
+Default behavior (with no flag) is to sort by barcode, UMI, ec, then flag
 -t, --threads         Number of threads to use
 -m, --memory          Maximum memory used
--T, --temp            Location and prefix for temporary files 
+-T, --temp            Location and prefix for temporary files
                       required if using -p, otherwise defaults to output
 -o, --output          File for sorted output
 -p, --pipe            Write to standard output
+    --umi             Sort by UMI, barcode, then ec
+    --count           Sort by multiplicity, barcode, UMI, then ec
+    --flags           Sort by flag, barcode, UMI, then ec
+    --ec              Sort by ec, barcode, then UMI
 ~~~
 
 This will create a new BUS file where the BUS records are sorted by barcode first, UMI second, and equivalence class third.
@@ -212,6 +217,20 @@ Usage: bustools text [options] bus-files
 
 Options: 
 -o, --output          File for text output
+-p, --pipe            Write to standard output
+~~~
+
+### fromtext
+
+Text converted BUS files can be converted back to binary BUS files with `bustools fromtext`.
+
+~~~
+> bustools fromtext
+Usage: bustools fromtext [options] text-files
+
+Options:
+-o, --output          File for BUS output
+-p, --pipe            Write to standard output
 ~~~
 
 ### whitelist

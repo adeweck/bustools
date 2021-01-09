@@ -148,6 +148,34 @@ inline bool ncmp4(const TP &a, const TP &b) {
   }
 };
 
+inline bool cmp5(const BUSData &a, const BUSData &b) {
+  if (a.ec == b.ec) {
+    if (a.barcode == b.barcode) {
+      return a.UMI < b.UMI;
+    } else {
+      return a.barcode < b.barcode;
+    } 
+  } else {
+    return a.ec < b.ec;
+  }
+};
+
+inline bool ncmp5(const TP &a, const TP &b) {
+  if (a.first.ec == b.first.ec) {
+    if (a.first.barcode == b.first.barcode) {
+      if (a.first.UMI == b.first.UMI) {
+        return a.second > b.second;
+      } else {
+        return a.first.UMI > b.first.UMI;
+      }
+    } else {
+      return a.first.barcode > b.first.barcode;
+    } 
+  } else { 
+    return a.first.ec > b.first.ec;
+  }
+};
+
 void bustools_sort(const Bustools_opt& opt) {
   BUSHeader h;
   size_t N = opt.max_memory / sizeof(BUSData);
@@ -175,6 +203,10 @@ void bustools_sort(const Bustools_opt& opt) {
     case SORT_COUNT:
       cmp = &cmp4;
       ncmp = &ncmp4;
+      break;
+    case SORT_EC:
+      cmp = &cmp5;
+      ncmp = &ncmp5;
       break;
     default:
       std::cerr << "ERROR: Unknown sort type" << std::endl;
