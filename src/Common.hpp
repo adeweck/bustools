@@ -11,7 +11,7 @@
 #include <sstream>
 
 
-#define BUSTOOLS_VERSION "prediction"
+#define BUSTOOLS_VERSION "devel"
 
 enum CAPTURE_TYPE : char {CAPTURE_NONE = 0, CAPTURE_TX, CAPTURE_BC, CAPTURE_UMI, CAPTURE_F};
 enum SORT_TYPE : char {SORT_BC = 0, SORT_UMI, SORT_F, SORT_COUNT, SORT_EC};
